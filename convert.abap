@@ -5,6 +5,8 @@ REPORT yteste MESSAGE-ID >0 .
 
 CLASS zlocal DEFINITION .
 
+
+
   PUBLIC SECTION .
 
     METHODS get .
