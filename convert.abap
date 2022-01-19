@@ -65,3 +65,59 @@ INITIALIZATION .
     ENDIF .
 
   ENDIF .
+  
+  
+  
+  
+  
+*  FUNCTION zca_call_in_v2
+*  IMPORTING
+*    VALUE(iv_exit) TYPE exitsname
+*    VALUE(it_data) TYPE zca_wrapper_tt.
+*
+*
+*
+*
+*
+*
+**** ATENTION: Class should inherit class ZCLCA_V2_MASTER ***
+*
+*  CONSTANTS: lc_param_data TYPE abap_parmname VALUE 'IT_DATA'.
+*
+*  "Get exits class and methods for exit name
+*  zclca_fixedvals=>get_exits( EXPORTING
+*                                iv_bukrs = space
+*                                iv_ename = iv_exit
+*                              IMPORTING
+*                                et_exits = DATA(lt_exits)
+*                              EXCEPTIONS
+*                                no_data  = 1
+*                                OTHERS   = 2
+*                             ).
+*  CHECK sy-subrc IS INITIAL.
+*
+*  "Fill parameter table and dynamically call the class/method
+*  LOOP AT lt_exits ASSIGNING FIELD-SYMBOL(<fs_exit>).
+*    DATA(lt_partab) = VALUE abap_parmbind_tab( ( name  = lc_param_data
+*                                                 kind  = cl_abap_objectdescr=>exporting
+*                                                 value = REF #( it_data[] ) )
+*                                                ).
+*
+*    TRY.
+*        DATA: lo_class TYPE REF TO object.
+*
+*        CREATE OBJECT lo_class TYPE (<fs_exit>-class)
+*          PARAMETER-TABLE lt_partab.
+*        CALL METHOD lo_class->(<fs_exit>-mthod).
+*
+**        CALL METHOD (<fs_exit>-class)=>(<fs_exit>-mthod)
+**          PARAMETER-TABLE lt_partab.
+*
+*      CATCH cx_root INTO DATA(lo_error).
+*        DATA(lv_mess) = lo_error->get_text( ).
+*
+*    ENDTRY.
+*
+*  ENDLOOP.
+*
+*ENDFUNCTION.
