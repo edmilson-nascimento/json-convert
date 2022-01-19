@@ -9,7 +9,16 @@ CLASS zlocal DEFINITION .
 
   PUBLIC SECTION .
 
-    METHODS get .
+    METHODS set
+      IMPORTING
+        i_type TYPE string
+        i_data TYPE any .
+
+    METHODS get
+      IMPORTING
+        i_type TYPE string
+      EXPORTING
+        e_data TYPE any .
 
     METHODS generate_data
       RETURNING
@@ -19,6 +28,10 @@ ENDCLASS .
 
 
 CLASS zlocal IMPLEMENTATION .
+
+  METHOD set .
+  ENDMETHOD .
+
 
   METHOD get .
   ENDMETHOD .
