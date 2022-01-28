@@ -6,7 +6,6 @@ REPORT yteste MESSAGE-ID >0 .
 CLASS zlocal DEFINITION .
 
 
-
   PUBLIC SECTION .
 
     METHODS set
@@ -65,11 +64,12 @@ INITIALIZATION .
     ENDIF .
 
   ENDIF .
-  
-  
-  
-  
-  
+
+
+
+  https://blogs.sap.com/2019/10/16/working-with-javascript-object-notation-json-format-in-abap-serialization-deserialization/
+
+
 *  FUNCTION zca_call_in_v2
 *  IMPORTING
 *    VALUE(iv_exit) TYPE exitsname
