@@ -9,4 +9,4 @@ uai, ainda nao sei como vou fazer isso... Quando eu descobrir eu atualizo isso a
 
 
 ## Criação de metodos ##
-Eu vou criar uma classe, mas ainda sei como vai ser.
+Eu vou criar uma classe, mas ainda sei como vai ser..
