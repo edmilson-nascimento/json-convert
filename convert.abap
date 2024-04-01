@@ -1,8 +1,5 @@
 REPORT yteste MESSAGE-ID >0 .
 
-
-
-
 CLASS zlocal DEFINITION .
 
 
